@@ -1,6 +1,6 @@
 #!/bin/bash
 
-wget ftp://ftp.ncdc.noaa.gov/pub/data/ghcn/daily/ghcnd-stations.txt
+wget -q --show-progress ftp://ftp.ncdc.noaa.gov/pub/data/ghcn/daily/ghcnd-stations.txt
 grep "^US" ghcnd-stations.txt > us_stations.txt
 cat us_stations.txt | tr -s ' ' > us_stations.txt.tmp
 cp us_stations.txt.tmp us_stations.txt
